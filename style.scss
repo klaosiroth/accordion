@@ -1,0 +1,55 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  max-width: 620px;
+  margin: 0 auto;
+}
+
+h1 {
+  text-align: center;
+}
+
+.accordion {
+
+  &__item {
+    padding-top: 24px;
+    padding-bottom: 24px;
+    border-bottom: solid 1px #EBEBEB;
+  }
+  &__headline {
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 24px;
+    position: relative;
+    padding-right: 32px;
+    margin-bottom: 0;
+    cursor: pointer;
+
+    &:after {
+      content: '\002B';
+      position: absolute;
+      top: 0;
+      right: 0;
+      transition: transform .2s ease-in-out;
+    }
+    &.active:after {
+      // content: '\2212';
+      // transform: rotate(45deg);
+      transform: rotate(135deg);
+    }
+  }
+  &__panel {
+    margin-top: 14px;
+    margin-bottom: 0px;
+    
+    display: none;
+  }
+  &__content {
+    font-size: 16px;
+    line-height: 20px;
+  }
+}
